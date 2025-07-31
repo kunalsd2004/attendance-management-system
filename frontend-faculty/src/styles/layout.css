@@ -1,0 +1,47 @@
+/* @tailwindcss */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.main-layout {
+  @apply w-screen h-screen overflow-hidden flex flex-col;
+}
+
+/* Header section */
+.header {
+  @apply h-[10vh] bg-green-300 flex items-center justify-between px-[2vw] text-lg font-bold;
+}
+
+/* Logout button */
+.logout-btn {
+  @apply bg-green-500 text-white py-2 px-5 rounded-md transition-all duration-200 hover:bg-green-600;
+}
+
+/* Body section: Sidebar + Content */
+.body-area {
+  @apply flex flex-1 h-[90vh];
+}
+
+/* Sidebar */
+.side-menu {
+  @apply w-[20vw] bg-orange-500 text-white py-[2vh] px-[1vw] font-medium;
+}
+
+.side-menu ul {
+  @apply flex flex-col gap-[2vh];
+}
+
+/* Main content */
+.main-content {
+  @apply w-[80vw] flex flex-col;
+}
+
+/* Sub-header inside main content */
+.sub-header {
+  @apply h-[9vh] bg-indigo-600 text-white flex items-center justify-between px-[2vw] font-bold;
+}
+
+/* Scrollable content area */
+.content-screen {
+  @apply flex-1 overflow-y-auto bg-white py-[2vh] px-[2vw];
+}
