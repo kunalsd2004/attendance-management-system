@@ -723,6 +723,12 @@ const ApplyLeave = () => {
                         const isSaturday = currentDate.getDay() === 6;
                         const isHoliday = holidays.includes(dayNumber);
                         
+                        // Check if this is today's date
+                        const today = new Date();
+                        const isToday = currentDate.getDate() === today.getDate() && 
+                                      currentDate.getMonth() === today.getMonth() && 
+                                      currentDate.getFullYear() === today.getFullYear();
+                        
                         // Find if this cell is part of a leave span
                         const leaveSpan = leaveSpans.find(span => 
                             dayNumber >= span.startDay && dayNumber <= span.endDay
@@ -742,6 +748,7 @@ const ApplyLeave = () => {
                         if (isSaturday) cssClasses.push('saturday');
                         if (isSunday) cssClasses.push('sunday');
                         if (isLeaveRequest) cssClasses.push('leave-day');
+                        if (isToday) cssClasses.push('today');
 
                         return (
                             <div 
@@ -1042,6 +1049,14 @@ const ApplyLeave = () => {
                 .card-day-cell.sunday {
                     color: #d9534f;
                     font-weight: bold;
+                }
+                .card-day-cell.today {
+                    background-color: #027e93;
+                    color: white;
+                    font-weight: bold;
+                }
+                .card-day-cell.today:hover {
+                    background-color: #03b0cd !important;
                 }
                 .modal-overlay {
                     position: fixed;
