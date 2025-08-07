@@ -1,0 +1,115 @@
+/* Custom Toast Styles for DY Patil Brand */
+
+/* Toast container customization */
+.Toastify__toast-container {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+}
+
+/* Success toast */
+.Toastify__toast--success {
+  background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+  border-left: 4px solid #10b981;
+  color: #065f46;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.15);
+}
+
+/* Error toast */
+.Toastify__toast--error {
+  background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%);
+  border-left: 4px solid #ef4444;
+  color: #991b1b;
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.15);
+}
+
+/* Warning toast */
+.Toastify__toast--warning {
+  background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+  border-left: 4px solid #f59e0b;
+  color: #92400e;
+  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.15);
+}
+
+/* Info toast */
+.Toastify__toast--info {
+  background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+  border-left: 4px solid #3b82f6;
+  color: #1e40af;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.15);
+}
+
+/* Toast content styling */
+.Toastify__toast-body {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.5;
+  padding: 12px 16px;
+}
+
+/* Progress bar customization */
+.Toastify__progress-bar {
+  height: 3px;
+}
+
+/* Success toast progress bar */
+.Toastify__toast--success .Toastify__progress-bar {
+  background: linear-gradient(90deg, #10b981 0%, #059669 100%);
+}
+
+/* Error toast progress bar */
+.Toastify__toast--error .Toastify__progress-bar {
+  background: linear-gradient(90deg, #ef4444 0%, #dc2626 100%);
+}
+
+/* Warning toast progress bar */
+.Toastify__toast--warning .Toastify__progress-bar {
+  background: linear-gradient(90deg, #f59e0b 0%, #d97706 100%);
+}
+
+/* Info toast progress bar */
+.Toastify__toast--info .Toastify__progress-bar {
+  background: linear-gradient(90deg, #3b82f6 0%, #2563eb 100%);
+}
+
+/* Close button styling */
+.Toastify__close-button {
+  color: #6b7280;
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+}
+
+.Toastify__close-button:hover {
+  opacity: 1;
+  color: #374151;
+}
+
+/* Toast icon customization */
+.Toastify__toast-icon {
+  margin-right: 12px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .Toastify__toast-container {
+    width: 90vw;
+    margin: 0 auto;
+  }
+  
+  .Toastify__toast {
+    margin-bottom: 8px;
+    border-radius: 1vw;
+  }
+}
+
+/* Animation customization */
+.Toastify__toast {
+  border-radius: 1vw;
+  min-height: 64px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Hover effects */
+.Toastify__toast:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+  transition: all 0.2s ease;
+} 

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 28.5 14.5">
+  <!-- Generator: Adobe Illustrator 29.7.1, SVG Export Plug-In . SVG Version: 2.1.1 Build 8)  -->
+  <defs>
+    <style>
+      .st0 {
+        fill: #8c001a;
+      }
+
+      .st1 {
+        fill: none;
+        isolation: isolate;
+        stroke: #8c001a;
+        stroke-miterlimit: 10;
+        stroke-width: .5px;
+      }
+    </style>
+  </defs>
+  <g id="Assets">
+    <g id="action">
+      <rect class="st1" x=".2" y=".3" width="28" height="14" rx="2" ry="2"/>
+      <circle class="st0" cx="5.9" cy="7.3" r="2.3"/>
+      <circle class="st0" cx="14.2" cy="7.3" r="2.3"/>
+      <circle class="st0" cx="22.6" cy="7.3" r="2.3"/>
+    </g>
+  </g>
+</svg>

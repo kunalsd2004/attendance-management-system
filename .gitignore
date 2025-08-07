@@ -1,0 +1,29 @@
+# Root level
+node_modules/
+.env
+.DS_Store
+dist/
+build/
+*.log
+*.env.*
+
+# Backend
+backend/node_modules/
+backend/.env
+backend/dist/
+backend/build/
+
+# Frontend
+frontend-faculty/node_modules/
+frontend-faculty/.env
+frontend-faculty/dist/
+frontend-faculty/build/
+frontend-faculty/.vite/
+
+# VS Code
+.vscode/
+
+# OS-specific
+Thumbs.db
+ehthumbs.db
+*.swp
