@@ -126,6 +126,23 @@ const ApplyLeaveModal = ({ onClose, initialDate, onLeaveCreated }) => {
             return;
         }
 
+        // Validate that all load adjustment entries have required fields
+        const invalidLoadAdjustments = loadAdjustments.filter(load => 
+            !load.partner.trim() || !load.timeFrom || !load.timeTo || !load.subject.trim()
+        );
+        
+        if (invalidLoadAdjustments.length > 0) {
+            const missingFields = [];
+            loadAdjustments.forEach((load, index) => {
+                if (!load.partner.trim()) missingFields.push(`Faculty ${index + 1} name`);
+                if (!load.timeFrom) missingFields.push(`Faculty ${index + 1} start time`);
+                if (!load.timeTo) missingFields.push(`Faculty ${index + 1} end time`);
+                if (!load.subject.trim()) missingFields.push(`Faculty ${index + 1} subject`);
+            });
+            showFormError(`Please fill in all required fields: ${missingFields.slice(0, 3).join(', ')}${missingFields.length > 3 ? ' and more...' : ''}`);
+            return;
+        }
+
         // Check if medical leave requires document attachment
         if (leaveType === 'Medical' && !attachedFile) {
             showFormError('Medical leave requires a document attachment (medical certificate).');
@@ -143,7 +160,7 @@ const ApplyLeaveModal = ({ onClose, initialDate, onLeaveCreated }) => {
             formData.append('startHalfDay', startHalfDay);
             formData.append('endHalfDay', endHalfDay);
             formData.append('reason', comments.trim());
-            formData.append('loadAdjustments', JSON.stringify(loadAdjustments));
+            formData.append('loadAdjustment', JSON.stringify(loadAdjustments));
             formData.append('userId', user?._id);
 
             // Add file if it exists

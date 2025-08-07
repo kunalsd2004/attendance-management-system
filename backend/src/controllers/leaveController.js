@@ -107,6 +107,25 @@ const applyLeave = async (req, res) => {
       return res.status(400).json(formatErrorResponse('All required fields must be provided'));
     }
 
+    // Validate loadAdjustment is a valid JSON string
+    let loadAdjustmentData;
+    try {
+      loadAdjustmentData = JSON.parse(loadAdjustment);
+      if (!Array.isArray(loadAdjustmentData) || loadAdjustmentData.length === 0) {
+        return res.status(400).json(formatErrorResponse('Load adjustment data must be a non-empty array'));
+      }
+      
+      // Validate each load adjustment entry has required fields
+      for (let i = 0; i < loadAdjustmentData.length; i++) {
+        const entry = loadAdjustmentData[i];
+        if (!entry.partner || !entry.timeFrom || !entry.timeTo || !entry.subject) {
+          return res.status(400).json(formatErrorResponse(`Load adjustment entry ${i + 1} is missing required fields (partner, timeFrom, timeTo, subject)`));
+        }
+      }
+    } catch (error) {
+      return res.status(400).json(formatErrorResponse('Invalid load adjustment data format'));
+    }
+
     // Find user
     const user = await User.findById(userId);
     if (!user) {
